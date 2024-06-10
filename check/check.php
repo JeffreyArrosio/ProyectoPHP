@@ -33,7 +33,9 @@ if ($tipo == "login") {
         header("location:../php/registro.php?fallo=1");
         exit();
     }
+} else {
+    header("location:../php/index.php");
+    exit();
 }
-header("location:../php/index.php");
-exit();
+
 

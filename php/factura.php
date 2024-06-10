@@ -35,14 +35,15 @@ include "../include/html.php";
             <?php
             while ($carro = $carritoV->fetch_assoc()) {
                 $vj = $mysql->query("SELECT * from videojuegos where id =" . $carro["id_video"]);
+                $vplat = $mysql->query("SELECT * from plataformas where id =" . $carro["id_plat"]);
                 $vprecio = $mysql->query("SELECT precio from tiene where id_video =" . $carro["id_video"] . " AND id_plat =" . $carro["id_plat"]);
+                $vplat = $vplat->fetch_assoc();
                 $vj = $vj->fetch_assoc();
                 $vprecio = $vprecio->fetch_assoc();
                 ?>
                 <div class="row mb-3">
-                    <img class="col-5 rounded" src="<?php echo $vj["portada"] ?>" alt="portada" width="100%" height="200px">
                     <div class="col-7 mb-3 display-6">
-                        <p><?php echo $vj["titulo"] ?></p>
+                        <p><?php echo $vj["titulo"] ?> (<?php echo $vplat["nombre"]?>)</p>
                         <span><?php echo $vprecio["precio"] ?>€</span>
                         <span>x <?php echo $carro["cantidad"] ?></span>
                         <p><?php echo $carro["fecha_compra"] ?></p>
@@ -52,6 +53,7 @@ include "../include/html.php";
                         ?>€</p>
                     </div>
                 </div>
+                <p>----------------------------------------------------------------------------------------</p><
                 <?php
                 $total = $total + $carro["cantidad"];
                 $precioT = $precioT + $tmp;
@@ -61,7 +63,6 @@ include "../include/html.php";
                 $pt = $pt->fetch_assoc();
                 ?>
                 <div class="row mb-3">
-                    <img class="col-5 rounded" src="<?php echo $pt["imagen"] ?>" alt="portada" width="100%" height="200px">
                     <div class="col-7 mb-3 display-6">
                         <p><?php echo $pt["nombre"] ?></p>
                         <span><?php echo $pt["precio"] ?>€</span>
@@ -72,6 +73,7 @@ include "../include/html.php";
                         echo $tmp ?>€</p>
                     </div>
                 </div>
+                <p>----------------------------------------------------------------------------------------</p><
                 <?php
                 $total = $total + $carro["cantidad"];
                 $precioT = $precioT + $tmp;
@@ -81,7 +83,6 @@ include "../include/html.php";
                 $cp = $cp->fetch_assoc();
                 ?>
                 <div class="row mb-3">
-                    <img class="col-5 rounded" src="<?php echo $cp["imagen"] ?>" alt="portada" width="100%" height="200px">
                     <div class="col-7 mb-3">
                         <p><?php echo $cp["nombre"] ?></p>
                         <span><?php echo $cp["precio"] ?>€</span>
@@ -92,6 +93,7 @@ include "../include/html.php";
                         echo $tmp ?>€</p>
                     </div>
                 </div>
+                <p>----------------------------------------------------------------------------------------</p><
                 <?php
                 $total = $total + $carro["cantidad"];
                 $precioT = $precioT + $tmp;
