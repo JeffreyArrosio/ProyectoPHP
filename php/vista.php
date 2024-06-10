@@ -109,15 +109,7 @@ include "../include/html.php";
                                         class="btn btn-danger">Borrar</button></a>
                             </div>
                             <?php
-                        } elseif (isset($_SESSION["id"]) and $persona["tipo"] == "cliente") {
-                            ?>
-                            <div class="d-flex flex-row-reverse mb-3">
-                                <form action="" method="post">
-                                    <button type="sumbit" class="btn btn-success">Añadir al carro +</button>
-                                </form>
-                            </div>
-                            <?php
-                        }
+                        } 
                         ?>
                     </span>
                     <?php
