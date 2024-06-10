@@ -82,9 +82,9 @@ $cons = $mysql->query("SELECT * FROM plataformas");
                     <p class="h2 mb-5">Nº de productos: <?php echo $total ?></p>
                     <p class="h2 mb-5">Precio: <?php echo $precioT ?>€</p>
                     <div class="btn-group">
-                        <a href=""><button type="button" class="btn btn-outline-success">Confirmar</button></a>
+                        <a href="carrito.php"><button type="button" class="btn btn-outline-success">Confirmar carrito</button></a>
                         <a href="../check/checkConfirmar.php?confirmar=no"><button type="button"
-                                class="btn btn-outline-danger">Cancelar</button></a>
+                                class="btn btn-outline-danger">Borrar carrito</button></a>
                     </div>
                     <?php
                 }
