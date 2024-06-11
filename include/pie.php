@@ -2,7 +2,7 @@
         <p>Proyecto realizado por el alumno <a class="text-warning" href="https://github.com/JeffreyArrosio">Jeffrey
                         Arrosio</a> para la asignatura de programación</p>
         <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title"
-                        rel="cc:attributionURL" href="https://github.com/JeffreyArrosio">Proyecto PHP</a> by <a
+                        rel="cc:attributionURL" href="https://github.com/JeffreyArrosio/ProyectoPHP">Proyecto PHP</a> by <a
                         rel="cc:attributionURL dct:creator" property="cc:attributionName"
                         href="https://github.com/JeffreyArrosio">Jeff</a> is licensed under <a
                         href="https://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" target="_blank"

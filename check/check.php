@@ -4,8 +4,8 @@ if (!isset($_POST["email"]) and !isset($_POST["pass"]) and !isset($_GET["tipo"])
     header("location:../php/index.php");
     exit();
 }
-$email = $_POST["email"];
-$pass = $_POST["pass"];
+$email =addslashes($_POST["email"]);
+$pass = sha1($_POST["pass"]);
 $tipo = $_GET["tipo"];
 if ($tipo == "login") {
     if ($email == "" or $pass == "") {
@@ -33,7 +33,9 @@ if ($tipo == "login") {
         header("location:../php/registro.php?fallo=1");
         exit();
     }
+} else {
+    header("location:../php/index.php");
+    exit();
 }
-header("location:../php/index.php");
-exit();
+
 
