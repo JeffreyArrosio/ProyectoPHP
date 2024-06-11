@@ -93,7 +93,7 @@ include "../include/html.php";
             <p class="h1 mb-5">Nº de productos: <?php echo $total ?></p>
             <p class="h1 mb-5">Precio: <?php echo $precioT ?>€</p>
             <div class="btn-group">
-                <a href=""><button type="button" class="btn btn-outline-success">Comprar</button></a>
+                <a href="../check/checkConfirmar.php?confirmar=si"><button type="button" class="btn btn-outline-success">Comprar</button></a>
                 <a href="../check/checkConfirmar.php?confirmar=no"><button type="button"
                         class="btn btn-outline-danger">Cancelar Compra</button></a>
                 <a href="factura.php" target="_blank"><button type="button" class="btn btn-outline-primary">Generar Factura</button></a>

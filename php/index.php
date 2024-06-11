@@ -20,6 +20,14 @@ $compo = $mysql->query("SELECT * FROM componentes");
             </div>
             <?php
         }
+        if(isset($_GET["carrito"])){
+            ?>
+            <div class="alert alert-success alert-dismissible mt-5">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                <strong>¡Gracias por realizar su compra con VIDEOWEBOS!</strong>
+            </div>
+            <?php
+        }
     ?>
     <main class="container-fluid">
         <section class="row justify-content-center">

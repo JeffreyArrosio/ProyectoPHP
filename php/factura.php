@@ -32,6 +32,13 @@ include "../include/html.php";
             $precioT = 0;
             ?>
             <h1 class="text-center">Factura de <?php echo $cliente["nombre"] ?></h1>
+            <p>
+                <?php
+                date_default_timezone_set('Atlantic/Canary');
+                $fechaHoraActual = date('Y-m-d H:i:s');
+                echo "$fechaHoraActual";
+                ?>
+            </p>
             <?php
             while ($carro = $carritoV->fetch_assoc()) {
                 $vj = $mysql->query("SELECT * from videojuegos where id =" . $carro["id_video"]);
@@ -43,7 +50,7 @@ include "../include/html.php";
                 ?>
                 <div class="row mb-3">
                     <div class="col-7 mb-3 display-6">
-                        <p><?php echo $vj["titulo"] ?> (<?php echo $vplat["nombre"]?>)</p>
+                        <p><?php echo $vj["titulo"] ?> (<?php echo $vplat["nombre"] ?>)</p>
                         <span><?php echo $vprecio["precio"] ?>€</span>
                         <span>x <?php echo $carro["cantidad"] ?></span>
                         <p><?php echo $carro["fecha_compra"] ?></p>
@@ -53,8 +60,8 @@ include "../include/html.php";
                         ?>€</p>
                     </div>
                 </div>
-                <p>----------------------------------------------------------------------------------------</p><
-                <?php
+                <p>----------------------------------------------------------------------------------------</p>
+                < <?php
                 $total = $total + $carro["cantidad"];
                 $precioT = $precioT + $tmp;
             }
@@ -62,46 +69,46 @@ include "../include/html.php";
                 $pt = $mysql->query("SELECT * from plataformas where id =" . $carro["id_plat"]);
                 $pt = $pt->fetch_assoc();
                 ?>
-                <div class="row mb-3">
-                    <div class="col-7 mb-3 display-6">
-                        <p><?php echo $pt["nombre"] ?></p>
-                        <span><?php echo $pt["precio"] ?>€</span>
-                        <span>x <?php echo $carro["cantidad"] ?></span>
-                        <p><?php echo $carro["fecha_compra"] ?></p>
-                        <p>Total: <?php
-                        $tmp = $carro["cantidad"] * $pt["precio"];
-                        echo $tmp ?>€</p>
+                    <div class="row mb-3">
+                        <div class="col-7 mb-3 display-6">
+                            <p><?php echo $pt["nombre"] ?></p>
+                            <span><?php echo $pt["precio"] ?>€</span>
+                            <span>x <?php echo $carro["cantidad"] ?></span>
+                            <p><?php echo $carro["fecha_compra"] ?></p>
+                            <p>Total: <?php
+                            $tmp = $carro["cantidad"] * $pt["precio"];
+                            echo $tmp ?>€</p>
+                        </div>
                     </div>
-                </div>
-                <p>----------------------------------------------------------------------------------------</p><
-                <?php
-                $total = $total + $carro["cantidad"];
-                $precioT = $precioT + $tmp;
+                    <p>----------------------------------------------------------------------------------------</p>
+                    < <?php
+                    $total = $total + $carro["cantidad"];
+                    $precioT = $precioT + $tmp;
             }
             while ($carro = $carritoC->fetch_assoc()) {
                 $cp = $mysql->query("SELECT * from componentes where id =" . $carro["id_compo"]);
                 $cp = $cp->fetch_assoc();
                 ?>
-                <div class="row mb-3">
-                    <div class="col-7 mb-3">
-                        <p><?php echo $cp["nombre"] ?></p>
-                        <span><?php echo $cp["precio"] ?>€</span>
-                        <span>x <?php echo $carro["cantidad"] ?></span>
-                        <p><?php echo $carro["fecha_compra"] ?></p>
-                        <p>Total: <?php
-                        $tmp = $carro["cantidad"] * $cp["precio"];
-                        echo $tmp ?>€</p>
-                    </div>
-                </div>
-                <p>----------------------------------------------------------------------------------------</p><
-                <?php
-                $total = $total + $carro["cantidad"];
-                $precioT = $precioT + $tmp;
+                        <div class="row mb-3">
+                            <div class="col-7 mb-3">
+                                <p><?php echo $cp["nombre"] ?></p>
+                                <span><?php echo $cp["precio"] ?>€</span>
+                                <span>x <?php echo $carro["cantidad"] ?></span>
+                                <p><?php echo $carro["fecha_compra"] ?></p>
+                                <p>Total: <?php
+                                $tmp = $carro["cantidad"] * $cp["precio"];
+                                echo $tmp ?>€</p>
+                            </div>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------</p>
+                        < <?php
+                        $total = $total + $carro["cantidad"];
+                        $precioT = $precioT + $tmp;
             }
             ?>
-            <h1 class="mb-5">Nº de productos: <?php echo $total ?></h1>
-            <h1 class="mb-5">Precio: <?php echo $precioT ?>€</h1>
-            <?php
+                    <h1 class="mb-5">Nº de productos: <?php echo $total ?></h1>
+                        <h1 class="mb-5">Precio: <?php echo $precioT ?>€</h1>
+                        <?php
         }
         ?>
     </main>
@@ -117,6 +124,7 @@ $html = ob_get_clean();
 
 require_once '../library/dompdf/autoload.inc.php';
 use Dompdf\Dompdf;
+
 $dompdf = new Dompdf();
 $options = $dompdf->getOptions();
 $options->set(array('isRemoteEnable' => true));
