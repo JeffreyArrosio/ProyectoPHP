@@ -82,7 +82,8 @@ $cons = $mysql->query("SELECT * FROM plataformas");
                     <p class="h2 mb-5">Nº de productos: <?php echo $total ?></p>
                     <p class="h2 mb-5">Precio: <?php echo $precioT ?>€</p>
                     <div class="btn-group">
-                        <a href="carrito.php"><button type="button" class="btn btn-outline-success">Confirmar carrito</button></a>
+                        <a href="carrito.php"><button type="button" class="btn btn-outline-success">Confirmar
+                                carrito</button></a>
                         <a href="../check/checkConfirmar.php?confirmar=no"><button type="button"
                                 class="btn btn-outline-danger">Borrar carrito</button></a>
                     </div>
@@ -97,7 +98,8 @@ $cons = $mysql->query("SELECT * FROM plataformas");
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="../php/index.php"><img src="../imagenes/videowebo.png" alt="" width="50px" height="50px"></a>
-            <span class="display-5"><a class="text-decoration-none text-light" href="../php/index.php">IDEOWEBOS</a></span>
+            <span class="display-5"><a class="text-decoration-none text-light"
+                    href="../php/index.php">IDEOWEBOS</a></span>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="../Header/Home.php" class="nav-link px-2 text-secondary">Home</a></li>
                 <li><a href="../Header/Features.php" class="nav-link px-2 text-white">Features</a></li>
@@ -116,7 +118,7 @@ $cons = $mysql->query("SELECT * FROM plataformas");
                 ?>
                 <div class="text-end">
                     <?php
-                    if ($usu["tipo"] != "cliente") {
+                    if ($usu["tipo"] == "empelado") {
                         ?>
                         <a href="admin.php"><button type="button" class="btn btn-outline-light me-2"><?php
                         echo $usu["nombre"] . " (Zona " . $usu["tipo"] . ")";
@@ -128,6 +130,26 @@ $cons = $mysql->query("SELECT * FROM plataformas");
                                     <path
                                         d="M3 8.812a5 5 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812" />
                                 </svg></button></a>
+                        <?php
+                    } elseif ($usu["tipo"] == "admin") {
+                        ?>
+                        <div class="dropdown" data-bs-theme="dark">
+                            <button type="button" class="btn  btn-outline-success  dropdown-toggle text-decoration-none"
+                                data-bs-toggle="dropdown" aria-expanded="false"><?php echo $usu["nombre"]." (".$usu["tipo"].")"?></button>
+                            <ul class="dropdown-menu">
+                                <li><a class="text-decoration-none" href="../php/admin.php"><button class="dropdown-item btn">ZONA ADMIN</button></a></li>
+                                <li><a class="text-decoration-none" href="../php/usuarios.php"><button class="dropdown-item btn">ZONA USUARIOS</button></a></li>
+                                <li class="d-grid gap-2">
+                                    <a class="text-decoration-none text-light" href="logout.php"><button type="button"
+                                            class="btn btn-danger "><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-power" viewBox="0 0 16 16">
+                                                <path d="M7.5 1v7h1V1z" />
+                                                <path
+                                                    d="M3 8.812a5 5 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812" />
+                                            </svg></a>
+                                </li>
+                            </ul>
+                        </div>
                         <?php
                     } else {
                         ?>
@@ -146,7 +168,6 @@ $cons = $mysql->query("SELECT * FROM plataformas");
                                                     d="M3 8.812a5 5 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812" />
                                             </svg></a>
                                 </li>
-
                             </ul>
                         </div>
                         <?php

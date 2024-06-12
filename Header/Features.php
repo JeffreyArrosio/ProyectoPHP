@@ -17,3 +17,4 @@ include "../include/html.php";
     </main>
     <?php include "../include/pie.php" ?>
 </body>
+</html>
