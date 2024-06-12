@@ -96,14 +96,14 @@ $cons = $mysql->query("SELECT * FROM plataformas");
     ?>
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="index.php"><img src="../imagenes/videowebo.png" alt="" width="50px" height="50px"></a>
-            <span class="display-5"><a class="text-decoration-none text-light" href="index.php">IDEOWEBOS</a></span>
+            <a href="../php/index.php"><img src="../imagenes/videowebo.png" alt="" width="50px" height="50px"></a>
+            <span class="display-5"><a class="text-decoration-none text-light" href="../php/index.php">IDEOWEBOS</a></span>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-                <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
-                <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-                <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-                <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+                <li><a href="../Header/Home.php" class="nav-link px-2 text-secondary">Home</a></li>
+                <li><a href="../Header/Features.php" class="nav-link px-2 text-white">Features</a></li>
+                <li><a href="../Header/Pricing.php" class="nav-link px-2 text-white">Pricing</a></li>
+                <li><a href="../Header/FAQ.php" class="nav-link px-2 text-white">FAQs</a></li>
+                <li><a href="../Header/About.php" class="nav-link px-2 text-white">About</a></li>
             </ul>
             <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
                 <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..."
