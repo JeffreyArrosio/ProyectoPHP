@@ -44,6 +44,9 @@ if ($tipo == "new") {
         header("location:../php/index.php");
         exit();
     } else {
+        $delete = $mysql->query("DELETE from compra_video where id_usu =". $_GET["id"]);
+        $delete = $mysql->query("DELETE from compra_equipo where id_usu =". $_GET["id"]);
+        $delete = $mysql->query("DELETE from compra_compo where id_usu =". $_GET["id"]);
         $delete = $mysql->query("DELETE from usuarios where id = " . $_GET["id"]);
         header("location:../php/usuarios.php");
         exit();

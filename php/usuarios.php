@@ -18,7 +18,7 @@ include "../include/html.php";
 
 <body>
     <?php include '../include/cabeza.php'; ?>
-    <main class="container">
+    <main class=" w-75 m-auto container">
         <a class="btn btn-success mb-3" href="newUser.php">Añadir usuario</a>
         <table class="table table-dark table-striped">
             <thead>

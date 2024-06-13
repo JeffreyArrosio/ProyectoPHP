@@ -22,7 +22,7 @@ include "../include/html.php";
 ?>
 
 <body>
-    <main class="container text-center">
+    <main class="w-75 m-auto container">
         <h1 class="display-1 mb-3">¿Estás seguro de borrar el siguiente usuario (<?php echo $usuario["tipo"]?>): <?php echo $usuario["nombre"]?>?</h1>
         <div class="d-flex justify-content-evenly mb-5">
             <a href="../check/checkUsuario.php?tipo=delete&id=<?php echo $usuario["id"]?>"><button
